@@ -9,32 +9,39 @@
             Padding="30,0" 
             VerticalOptions="Center">
 
-            <Image
-                Source="dotnet_bot.png"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                HeightRequest="200"
-                HorizontalOptions="Center" />
-                
-            <Label 
-                Text="Hello, World!"
-                SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
-                HorizontalOptions="Center" />
+            <Button Text="Welcome to MAUI Dance Studio"
+                    Margin="0, 20"
+                    WidthRequest="300"
+                    HorizontalOptions="Center"
+                    SemanticProperties.Hint="Click this button to display the image in Dance Studio"
+                    Clicked="OnWelcomeToDanceStudio"
+                    />
             
-            <Label 
-                Text="Welcome to .NET Multi-platform App UI"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
-                FontSize="18"
-                HorizontalOptions="Center" />
-
-            <Button 
-                x:Name="CounterBtn"
-                Text="Click me"
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Center" />
-
+            <Image x:Name="_imgAvatar"
+                   Source="homer_simpson.gif"
+                   HeightRequest="450"
+                   Aspect="AspectFit"
+                   IsVisible="False"
+                   SemanticProperties.Description="Animated image of Simson Homer jumping and clicking his hills"/>
+            
+            <HorizontalStackLayout
+                HorizontalOptions="Center">
+                <Button x:Name="_btnStart"
+                        Text = "Start Dancing"
+                        Margin="10, 20"
+                        WidthRequest="200"
+                        IsVisible="False"
+                        SemanticProperties.Hint="Click the button to start the animation"
+                        Clicked="OnToggleDancing"/>
+                <Button x:Name="_btnStop"
+                        Text = "Stop Dancing"
+                        Margin="10, 20"
+                        WidthRequest="200"
+                        IsVisible="False"
+                        IsEnabled="False"
+                        SemanticProperties.Hint="Click the button to stop the animation"
+                        Clicked="OnToggleDancing"/>
+            </HorizontalStackLayout>            
         </VerticalStackLayout>
     </ScrollView>
  
