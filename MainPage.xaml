@@ -24,24 +24,13 @@
                    IsVisible="False"
                    SemanticProperties.Description="Animated image of Simson Homer jumping and clicking his hills"/>
             
-            <HorizontalStackLayout
-                HorizontalOptions="Center">
-                <Button x:Name="_btnStart"
-                        Text = "Start Dancing"
-                        Margin="10, 20"
-                        WidthRequest="200"
-                        IsVisible="False"
-                        SemanticProperties.Hint="Click the button to start the animation"
-                        Clicked="OnToggleDancing"/>
-                <Button x:Name="_btnStop"
-                        Text = "Stop Dancing"
-                        Margin="10, 20"
-                        WidthRequest="200"
-                        IsVisible="False"
-                        IsEnabled="False"
-                        SemanticProperties.Hint="Click the button to stop the animation"
-                        Clicked="OnToggleDancing"/>
-            </HorizontalStackLayout>            
+            <Button x:Name="_btnAction"
+                    Text = "Start Dancing"
+                    Margin="0, 20"
+                    WidthRequest="200"
+                    IsVisible="False"
+                    SemanticProperties.Hint="Click the button to toggle the animation"
+                    Clicked="OnToggleDancing"/>
         </VerticalStackLayout>
     </ScrollView>
  
