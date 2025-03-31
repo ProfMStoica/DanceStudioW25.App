@@ -4,10 +4,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DanceStudio.DanceFloorPage">
     <Button Text="Left"
-            Padding="20, 30, 40, 50"
             FontSize="17"
-            Margin="10"
-            VerticalOptions="Fill" HorizontalOptions="Fill"
+            Margin="100"
+            VerticalOptions="Center" HorizontalOptions="Center"
             WidthRequest="200" HeightRequest="100" 
             />
 </ContentPage>
