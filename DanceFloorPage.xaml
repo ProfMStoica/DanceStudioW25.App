@@ -18,26 +18,33 @@
         <!-- Up/Left Action Buttons-->
         <VerticalStackLayout Spacing="10"
                              Grid.Row="1" Grid.Column="0">
-            <Button x:Name="_btnUp" Text="Up" FontSize="17" WidthRequest="95"/>
-            <Button x:Name="_btnLeft" Text="Left" FontSize="17" WidthRequest="95"/>
+            <Button x:Name="_btnUp" Text="Up" FontSize="17" WidthRequest="95"
+                    Clicked="OnDanceMove"/>
+            <Button x:Name="_btnLeft" Text="Left" FontSize="17" WidthRequest="95"
+                    Clicked="OnDanceMove"/>
         </VerticalStackLayout>
         
         <!-- Rotate/Down Action Buttons-->
         <VerticalStackLayout Grid.Row="1" Grid.Column="1" Spacing="10" HorizontalOptions="Center">
             <HorizontalStackLayout Spacing="10" >
-                <Button x:Name="_btnRotateLeft" Text="R-Left" FontSize="17"  WidthRequest="95"/>
-                <Button x:Name="_btnRotateRight" Text="R-Right" FontSize="17"  WidthRequest="95"/>
+                <Button x:Name="_btnRotateLeft" Text="R-Left" FontSize="17"  WidthRequest="95"
+                        Clicked="OnDanceMoveRotate"/>
+                <Button x:Name="_btnRotateRight" Text="R-Right" FontSize="17"  WidthRequest="95"
+                        Clicked="OnDanceMoveRotate"/>
             </HorizontalStackLayout>
             <Button x:Name="_btnToggleDancing" Text="Start Dancing" 
                     FontSize="17"
-                    WidthRequest="200"/>
+                    WidthRequest="200"
+                    Clicked="OnToggleDancing"/>
         </VerticalStackLayout>
         
         <!-- Down/Right Action Buttons-->
         <VerticalStackLayout Spacing="10"
                              Grid.Row="1" Grid.Column="2">
-            <Button x:Name="_btnDown" Text="Down" FontSize="17" WidthRequest="95"/>
-            <Button x:Name="_btnRight" Text="Right" FontSize="17" WidthRequest="95"/>
+            <Button x:Name="_btnDown" Text="Down" FontSize="17" WidthRequest="95"
+                    Clicked="OnDanceMove"/>
+            <Button x:Name="_btnRight" Text="Right" FontSize="17" WidthRequest="95"
+                    Clicked="OnDanceMove"/>
         </VerticalStackLayout>
         
     </Grid>
