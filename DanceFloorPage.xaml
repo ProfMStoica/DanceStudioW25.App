@@ -10,7 +10,8 @@
                 StrokeThickness="2" 
                 Margin="20">
             <AbsoluteLayout x:Name="_alDanceFloor">
-                <Image Source="homer_simpson.gif"
+                <Image x:Name="_imgAvatar"
+                       Source="homer_simpson.gif"
                        AbsoluteLayout.LayoutBounds="0.5, 0.5"
                        AbsoluteLayout.LayoutFlags="PositionProportional"/>
             </AbsoluteLayout>
@@ -21,8 +22,10 @@
                              VerticalOptions="Start"
                              Margin="20"
                              Spacing="10">
-            <Button Text="Up" FontSize="17" WidthRequest="95"/>
-            <Button Text="Left" FontSize="17" WidthRequest="95"/>
+            <Button x:Name="_btnUp" Text="Up" FontSize="17" WidthRequest="95"
+                    Clicked="OnDanceMove"/>
+            <Button  x:Name="_btnLeft" Text="Left" FontSize="17" WidthRequest="95" 
+                     Clicked="OnDanceMove"/>
         </VerticalStackLayout>
         
         <!-- The Rotate/Load controls-->
@@ -31,10 +34,13 @@
                              Spacing="10"
                              WidthRequest="200">
             <HorizontalStackLayout Spacing="10" >
-                <Button Text="R-Left" FontSize="17" WidthRequest="95"/>
-                <Button Text = "R-Right" FontSize="17"  WidthRequest="95"/>
+                <Button x:Name="_btnRotateLeft" Text="R-Left" FontSize="17" WidthRequest="95"
+                        Clicked="OnDanceMoveRotate"/>
+                <Button x:Name="_btnRotateRight" Text = "R-Right" FontSize="17"  WidthRequest="95"
+                        Clicked="OnDanceMoveRotate"/>
             </HorizontalStackLayout>
-            <Button Text="Load Dancer" FontSize="17"/>
+            <Button x:Name="_btnStartDancing" Text="Start Dancing" FontSize="17"
+                    Clicked="OnStartDancing"/>
         </VerticalStackLayout>
         
         <!-- The Down/Right controls-->
@@ -42,8 +48,10 @@
                              VerticalOptions="End"
                              Margin="20"
                              Spacing="10">
-            <Button Text="Down" FontSize="17"  WidthRequest="95"/>
-            <Button Text="Right" FontSize="17" WidthRequest="95"/>
+            <Button  x:Name="_btnDown" Text="Down" FontSize="17"  WidthRequest="95"  
+                     Clicked="OnDanceMove"/>
+            <Button   x:Name="_btnRight" Text="Right" FontSize="17" WidthRequest="95"
+                      Clicked="OnDanceMove"/>
         </VerticalStackLayout>        
     </Grid>
 </ContentPage>
