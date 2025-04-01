@@ -39,8 +39,8 @@
                 <Button x:Name="_btnRotateRight" Text = "R-Right" FontSize="17"  WidthRequest="95"
                         Clicked="OnDanceMoveRotate"/>
             </HorizontalStackLayout>
-            <Button x:Name="_btnStartDancing" Text="Start Dancing" FontSize="17"
-                    Clicked="OnStartDancing"/>
+            <Button x:Name="_btnToggleDancing" Text="Start Dancing" FontSize="17"
+                    Clicked="OnToggleDancing"/>
         </VerticalStackLayout>
         
         <!-- The Down/Right controls-->

@@ -10,9 +10,21 @@ namespace DanceStudio;
 
 public partial class DanceFloorPage : ContentPage
 {
+	private IDispatcherTimer _danceTimer;
 	public DanceFloorPage()
 	{
 		InitializeComponent();
+		
+		//initialize the dance timer
+		_danceTimer = Dispatcher.CreateTimer();
+		_danceTimer.Interval = TimeSpan.FromMilliseconds(500);
+		_danceTimer.Tick += OnBasicDanceStep;
+	}
+
+	private void OnBasicDanceStep(object sender, EventArgs e)
+	{
+		//Flip the avatar image on the Y axix
+		_imgAvatar.ScaleX *= -1;
 	}
 
 	private void SwitchToAbsoluteLayoutBounds()
@@ -24,8 +36,9 @@ public partial class DanceFloorPage : ContentPage
 			Rect avatarBounds = AbsoluteLayout.GetLayoutBounds(_imgAvatar);
 		
 			//calculate absolute coordinates
-			avatarBounds.X *= _alDanceFloor.Width;
-			avatarBounds.Y *= _alDanceFloor.Height;
+			avatarBounds.X = avatarBounds.X * _alDanceFloor.Width - _imgAvatar.Width / 2;
+			avatarBounds.Y = avatarBounds.Y * _alDanceFloor.Height - _imgAvatar.Height / 2;
+			
 			avatarBounds.Width = _imgAvatar.Width;
 			avatarBounds.Height = _imgAvatar.Height;
 		
@@ -93,9 +106,27 @@ public partial class DanceFloorPage : ContentPage
 		}
 	}
 
-	private void OnStartDancing(object sender, EventArgs e)
+	private void OnToggleDancing(object sender, EventArgs e)
 	{
-		
+		//Determine if the avatar is currently dancing based on whether the
+		//timer is active
+		if (_danceTimer.IsRunning)
+		{
+			//The avatar is dancing on a time so stop it
+			_danceTimer.Stop();
+			
+			//Update the button label to allow the user to restart dancing
+			_btnToggleDancing.Text = "Start Dancing";
+		}
+		else
+		{
+			//start the dancing timer
+			_danceTimer.Start();
+			
+			//update the button label to allow the user to stop the avatar's dancing
+			_btnToggleDancing.Text = "Stop Dancing";
+			
+		}
 	}
 }
 
