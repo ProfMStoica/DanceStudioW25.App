@@ -2,13 +2,14 @@
 
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="DanceStudio.DanceFloorPage">
+             x:Class="DanceStudio.DanceFloorPage"
+             Title="Dance Floor">
     <Button Text="Left"
             FontSize="17"
             Margin="100"
             VerticalOptions="Center" HorizontalOptions="Center"
             WidthRequest="200" HeightRequest="100" 
-            />
+    />
 </ContentPage>
 
 <!--

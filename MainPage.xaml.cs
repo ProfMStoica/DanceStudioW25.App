@@ -17,7 +17,7 @@ public partial class MainPage : ContentPage
         _btnStop.IsEnabled = false;
     }
 
-    private void OnToggleDancing(object sender, EventArgs e)
+    private async void OnToggleDancing(object sender, EventArgs e)
     {
         //Toggle the animation of the avatar image based on its current stage and update the action button
         //Determine  which button has triggered the event handler
@@ -39,6 +39,12 @@ public partial class MainPage : ContentPage
             //Allow the user to stop the animation
             _btnStop.IsEnabled = true;
             _btnStart.IsEnabled = false;
+            
+            //Allow the animation to play before navigating to the dance floor
+            await Task.Delay(2000);
+            
+            //Navigate to Homer to the Dance Floor
+            Shell.Current.GoToAsync("dance-floor", true);
         }
     }
 }
