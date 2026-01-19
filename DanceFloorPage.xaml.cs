@@ -43,7 +43,6 @@ public partial class DanceFloorPage : ContentPage
 			avatarBounds.Height = _imgAvatar.Height;
 		
 			//switch to absolute coordinates and set them
-			AbsoluteLayout.SetLayoutFlags(_imgAvatar, AbsoluteLayoutFlags.None);
 			AbsoluteLayout.SetLayoutBounds(_imgAvatar, avatarBounds);			
 		}
 	}
